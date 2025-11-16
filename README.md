@@ -8,6 +8,13 @@ This package contains a DNS provider module for [Caddy](https://github.com/caddy
 dns.providers.dnsimple
 ```
 
+## DNSimple API access tokens
+
+An `account_id` must be provided when using this module with a DNSimple user token. When using an account token, the account ID will be returned as part of the initial client OAuth authorization. It is recommended to use a scoped account token.
+
+See the article on [account tokens vs user tokens](https://support.dnsimple.com/articles/api-access-token/#account-tokens-vs-user-tokens) for more information.
+
+
 ## Config examples
 
 To use this module for the ACME DNS challenge, [configure the ACME issuer in your Caddy JSON](https://caddyserver.com/docs/json/apps/tls/automation/policies/issuer/acme/) like so:
@@ -19,8 +26,8 @@ To use this module for the ACME DNS challenge, [configure the ACME issuer in you
     "dns": {
       "provider": {
         "name": "dnsimple",
-        "api_access_token": "YOUR_API_ACCESS_TOKEN",
-        "account_id": "YOUR_ACCOUNT_ID"
+        "account_id": "YOUR_ACCOUNT_ID",
+        "api_access_token": "YOUR_API_ACCESS_TOKEN"
       }
     }
   }
@@ -56,8 +63,8 @@ example.com {
 example.com {
 	tls {
 		dns dnsimple {
-      api_access_token {$DNSIMPLE_API_ACCESS_TOKEN}
       account_id {$DNSIMPLE_ACCOUNT_ID}
+      api_access_token {$DNSIMPLE_API_ACCESS_TOKEN}
     }
 	}
 	...
