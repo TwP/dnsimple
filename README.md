@@ -63,9 +63,9 @@ example.com {
 example.com {
 	tls {
 		dns dnsimple {
-      account_id {$DNSIMPLE_ACCOUNT_ID}
-      api_access_token {$DNSIMPLE_API_ACCESS_TOKEN}
-    }
+			account_id {$DNSIMPLE_ACCOUNT_ID}
+			api_access_token {$DNSIMPLE_API_ACCESS_TOKEN}
+		}
 	}
 	...
 }
