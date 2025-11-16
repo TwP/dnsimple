@@ -19,7 +19,8 @@ To use this module for the ACME DNS challenge, [configure the ACME issuer in you
     "dns": {
       "provider": {
         "name": "dnsimple",
-        "api_access_token": "YOUR_API_ACCESS_TOKEN"
+        "api_access_token": "YOUR_API_ACCESS_TOKEN",
+        "account_id": "YOUR_ACCOUNT_ID"
       }
     }
   }
@@ -45,6 +46,19 @@ example.com {
 example.com {
 	tls {
 		dns dnsimple {$DNSIMPLE_API_ACCESS_TOKEN}
+	}
+	...
+}
+```
+
+### Provide account ID
+```Caddyfile
+example.com {
+	tls {
+		dns dnsimple {
+      api_access_token {$DNSIMPLE_API_ACCESS_TOKEN}
+      account_id {$DNSIMPLE_ACCOUNT_ID}
+    }
 	}
 	...
 }
