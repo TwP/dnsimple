@@ -10,7 +10,7 @@ dns.providers.dnsimple
 
 ## DNSimple API access tokens
 
-An `account_id` must be provided when using this module with a DNSimple user token. When using an account token, the account ID will be returned as part of the initial client OAuth authorization. It is recommended to use a scoped account token.
+An `account_id` must be provided when using this module with a DNSimple user token. The `account_id` can be omitted when using an account token since the account token already defines the account being used.
 
 See the article on [account tokens vs user tokens](https://support.dnsimple.com/articles/api-access-token/#account-tokens-vs-user-tokens) for more information.
 
