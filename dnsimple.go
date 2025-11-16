@@ -31,6 +31,7 @@ func (p *Provider) Provision(ctx caddy.Context) error {
 //
 //	dnsimple [<api_access_token>] {
 //	    api_access_token <api_access_token>
+//	    account_id <account_id>
 //	}
 func (p *Provider) UnmarshalCaddyfile(d *caddyfile.Dispenser) error {
 	for d.Next() {
