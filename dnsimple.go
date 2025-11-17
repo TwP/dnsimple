@@ -23,7 +23,9 @@ func (Provider) CaddyModule() caddy.ModuleInfo {
 
 // Provision sets up the module. Implements caddy.Provisioner.
 func (p *Provider) Provision(ctx caddy.Context) error {
-	p.Provider.APIAccessToken = caddy.NewReplacer().ReplaceAll(p.Provider.APIAccessToken, "")
+	repl := caddy.NewReplacer()
+	p.Provider.AccountID = repl.ReplaceAll(p.Provider.AccountID, "")
+	p.Provider.APIAccessToken = repl.ReplaceAll(p.Provider.APIAccessToken, "")
 	return nil
 }
 
