@@ -1,4 +1,4 @@
-module github.com/twp/dnsimple
+module github.com/caddy-dns/dnsimple
 
 go 1.25
 
